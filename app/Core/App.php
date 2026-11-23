@@ -19,11 +19,20 @@ final class App
     private static ?bool $pretty = null;
     private static string $nonce = '';
 
-    public static function run(): void
+    /** Chargement de la configuration, du fuseau horaire et des erreurs (web et CLI). */
+    public static function boot(): void
     {
         self::loadConfig();
         date_default_timezone_set((string) config('app.timezone', 'Europe/Paris'));
         self::configureErrors();
+        if (PHP_SAPI === 'cli') {
+            ini_set('display_errors', '1');
+        }
+    }
+
+    public static function run(): void
+    {
+        self::boot();
         self::$nonce = base64_encode(random_bytes(16));
         self::sendSecurityHeaders();
 
