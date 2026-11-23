@@ -12,7 +12,7 @@ use App\Core\View;
 $links = [
     'home'      => ['Matchs', url(), 'ball'],
     'live'      => ['En direct', url('', ['filtre' => 'direct']), 'live'],
-    'favorites' => ['Mes favoris', url('favoris'), 'star'],
+    'favorites' => ['Favoris', url('favoris'), 'star'],
     'search'    => ['Recherche', url('recherche'), 'search'],
 ];
 ?>

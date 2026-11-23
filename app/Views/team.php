@@ -162,9 +162,9 @@ if ($coach && !empty($coach['name'])) {
         <?php foreach ($competitions as $c): ?>
           <li>
             <?php if ($c['url']): ?>
-              <a class="chip" href="<?= e($c['url']) ?>"><?= crest($c['emblem'], 16, 'crest crest--sm') ?><span><?= e($c['name']) ?></span></a>
+              <a class="chip" href="<?= e($c['url']) ?>"><?= crest($c['emblem'], 16, 'crest crest--sm crest--emblem') ?><span><?= e($c['name']) ?></span></a>
             <?php else: ?>
-              <span class="chip chip--muted" title="Non incluse dans votre offre"><?= crest($c['emblem'], 16, 'crest crest--sm') ?><span><?= e($c['name']) ?></span></span>
+              <span class="chip chip--muted" title="Non incluse dans votre offre"><?= crest($c['emblem'], 16, 'crest crest--sm crest--emblem') ?><span><?= e($c['name']) ?></span></span>
             <?php endif; ?>
           </li>
         <?php endforeach; ?>

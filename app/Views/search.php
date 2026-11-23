@@ -45,7 +45,7 @@ $noResults = $hasQuery && !$results['competitions'] && !$results['teams'];
       <?php foreach ($results['competitions'] as $c): ?>
         <li>
           <a class="result" href="<?= e($c['url']) ?>">
-            <?= crest($c['emblem'], 28, 'crest crest--md') ?>
+            <?= crest($c['emblem'], 28, 'crest crest--md crest--emblem') ?>
             <span class="result__text">
               <span class="result__name"><?= e($c['display_name']) ?></span>
               <span class="result__meta"><?= e($c['area']) ?></span>
@@ -81,7 +81,7 @@ $noResults = $hasQuery && !$results['competitions'] && !$results['teams'];
       <?php foreach ($competitions as $c): ?>
         <li>
           <a class="result" href="<?= e(url('competition/' . $c['code'])) ?>">
-            <?= crest($c['emblem'], 28, 'crest crest--md') ?>
+            <?= crest($c['emblem'], 28, 'crest crest--md crest--emblem') ?>
             <span class="result__text">
               <span class="result__name"><?= e(Format::competitionName($c)) ?></span>
               <span class="result__meta"><?= e(Format::area($c['area_name'])) ?></span>

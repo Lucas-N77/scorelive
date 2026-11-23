@@ -26,7 +26,7 @@ $seasonLabel = Format::season($season);
 $matchdayUrl = static fn (int $n): string => url('competition/' . $competitionKey, ['journee' => $n]);
 ?>
 <section class="hero">
-  <div class="hero__media"><?= crest($competition['emblem'] ?? null, 64, 'crest crest--xl') ?></div>
+  <div class="hero__media"><?= crest($competition['emblem'] ?? null, 64, 'crest crest--xl crest--emblem') ?></div>
   <div class="hero__text">
     <p class="hero__kicker">
       <?php if (!empty($area['flag'])): ?><?= crest($area['flag'], 16, 'flag') ?><?php endif; ?>

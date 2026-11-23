@@ -17,7 +17,7 @@ use App\Core\View;
     <?php else: ?>
       <span class="comp-group__title">
     <?php endif; ?>
-        <?= crest($group['emblem'], 24, 'crest crest--comp') ?>
+        <?= crest($group['emblem'], 24, 'crest crest--comp crest--emblem') ?>
         <span class="comp-group__text">
           <span class="comp-group__area">
             <?php if ($group['flag']): ?><?= crest($group['flag'], 14, 'flag') ?><?php endif; ?>

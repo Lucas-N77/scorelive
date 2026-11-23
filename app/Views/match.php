@@ -33,7 +33,7 @@ $cardLabels = ['YELLOW' => 'Carton jaune', 'RED' => 'Carton rouge', 'YELLOW_RED'
 <nav class="breadcrumb" aria-label="Fil d’Ariane">
   <?php if ($m['competition']['url']): ?>
     <a class="breadcrumb__link" href="<?= e($m['competition']['url']) ?>">
-      <?= crest($m['competition']['emblem'], 18, 'crest crest--sm') ?>
+      <?= crest($m['competition']['emblem'], 18, 'crest crest--sm crest--emblem') ?>
       <span><?= e($m['competition']['name']) ?></span>
     </a>
   <?php endif; ?>

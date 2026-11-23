@@ -49,7 +49,7 @@ use App\Core\View;
       <?php foreach ($competitions as $f): ?>
         <li class="fav-card" data-fav-card>
           <a class="fav-card__link" href="<?= e(url('competition/' . $f['ref_id'])) ?>">
-            <?= crest($f['crest'], 36, 'crest crest--lg') ?>
+            <?= crest($f['crest'], 36, 'crest crest--lg crest--emblem') ?>
             <span class="fav-card__name"><?= e($f['name']) ?></span>
           </a>
           <?php View::partial('fav-button', ['type' => 'competition', 'id' => $f['ref_id'], 'active' => true, 'compact' => true, 'label' => $f['name']]); ?>

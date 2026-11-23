@@ -18,7 +18,7 @@ $pinned = array_values(array_filter($competitions, static fn (array $c): bool =>
       <?php foreach ($pinned as $c): ?>
         <li>
           <a class="sidebar__link<?= $active === $c['code'] ? ' is-active' : '' ?>" href="<?= e(url('competition/' . $c['code'])) ?>">
-            <?= crest($c['emblem'], 22, 'crest crest--sm') ?>
+            <?= crest($c['emblem'], 22, 'crest crest--sm crest--emblem') ?>
             <span class="sidebar__text">
               <span class="sidebar__name"><?= e(Format::competitionName($c)) ?></span>
               <span class="sidebar__area"><?= e(Format::area($c['area_name'])) ?></span>
@@ -35,7 +35,7 @@ $pinned = array_values(array_filter($competitions, static fn (array $c): bool =>
       <?php foreach ($competitions as $c): ?>
         <li>
           <a class="sidebar__link<?= $active === $c['code'] ? ' is-active' : '' ?>" href="<?= e(url('competition/' . $c['code'])) ?>">
-            <?= crest($c['emblem'], 22, 'crest crest--sm') ?>
+            <?= crest($c['emblem'], 22, 'crest crest--sm crest--emblem') ?>
             <span class="sidebar__text">
               <span class="sidebar__name"><?= e(Format::competitionName($c)) ?></span>
               <span class="sidebar__area"><?= e(Format::area($c['area_name'])) ?></span>

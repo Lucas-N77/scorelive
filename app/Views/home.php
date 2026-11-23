@@ -60,7 +60,7 @@ $hasMatchesForFilter = $filterState === 'all' ? $counts['all'] > 0 : $counts[$fi
   <nav class="comp-strip" aria-label="Accès rapide aux compétitions">
     <?php foreach ($competitions as $c): ?>
       <a class="comp-strip__item" href="<?= e(url('competition/' . $c['code'])) ?>">
-        <?= crest($c['emblem'], 18, 'crest crest--sm') ?>
+        <?= crest($c['emblem'], 18, 'crest crest--sm crest--emblem') ?>
         <span><?= e(Format::competitionName($c)) ?></span>
       </a>
     <?php endforeach; ?>
