@@ -53,6 +53,14 @@ final class Session
         unset($_SESSION[$key]);
     }
 
+    /** Lit puis supprime une valeur (ex. erreurs de formulaire à afficher une fois). */
+    public static function pull(string $key, mixed $default = null): mixed
+    {
+        $value = $_SESSION[$key] ?? $default;
+        unset($_SESSION[$key]);
+        return $value;
+    }
+
     public static function regenerate(): void
     {
         if (session_status() === PHP_SESSION_ACTIVE) {
