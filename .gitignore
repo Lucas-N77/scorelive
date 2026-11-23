@@ -1,0 +1,13 @@
+# Configuration locale : contient la clé d'API et les accès MySQL, ne jamais versionner
+/config.php
+
+# Journaux applicatifs
+/storage/logs/*
+!/storage/logs/.gitkeep
+
+# Système et éditeurs
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

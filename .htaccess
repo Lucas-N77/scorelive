@@ -1,0 +1,39 @@
+# ScoreLive : configuration Apache
+Options -Indexes
+DirectoryIndex index.php
+AddDefaultCharset UTF-8
+
+# Fichiers sensibles : jamais servis directement
+<FilesMatch "^(config(\.example)?\.php|database\.sql|README\.md|\..+)$">
+    Require all denied
+</FilesMatch>
+
+# Dossiers cachés (.git, …) : introuvables
+<IfModule mod_alias.c>
+    RedirectMatch 404 /\.(git|svn|idea|vscode)(/|$)
+</IfModule>
+
+# URLs propres (facultatif) : actives uniquement si mod_rewrite est chargé dans Apache.
+# Sans mod_rewrite, l'application utilise des adresses du type index.php/match/123.
+<IfModule mod_rewrite.c>
+    SetEnv SCORELIVE_REWRITE 1
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [QSA,L]
+</IfModule>
+
+<IfModule mod_mime.c>
+    AddType image/svg+xml .svg
+    AddType application/manifest+json .webmanifest
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    <FilesMatch "\.(css|js|svg|png|ico|woff2)$">
+        Header set Cache-Control "public, max-age=604800"
+    </FilesMatch>
+    <FilesMatch "^(sw\.js|manifest\.json|offline\.html)$">
+        Header set Cache-Control "no-cache"
+    </FilesMatch>
+</IfModule>
