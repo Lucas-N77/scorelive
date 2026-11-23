@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>ScoreLive</title>
+  <defs>
+    <linearGradient id="sl-gm" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3DF5A8"/>
+      <stop offset="1" stop-color="#12A6EA"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#sl-gm)"/>
+  <g transform="translate(256 256) scale(0.72) translate(-256 -256)">
+    <path d="M72 284H156L197.6 184L266.4 356L316 236L343.2 284H440" fill="none" stroke="#04131F" stroke-width="44.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="400" cy="132" r="41.6" fill="#04131F"/>
+  </g>
+</svg>
